@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💖 С Днём Матери! 💖</title>
+    <!-- ИКОНКА САЙТА -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --neon-pink: #ff2d95;
+            --hot-pink: #ff6b9d;
+            --electric-purple: #b829dd;
+            --cyan: #00d4ff;
+            --gold: #ffd700;
+            --coral: #ff6b6b;
+            --mint: #4ecdc4;
+            --nav-height: 70px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0015;
+            color: white;
+            overflow-x: hidden;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* === НАВИГАЦИЯ === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(10, 0, 21, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,45,149,0.3);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, var(--neon-pink), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+        }
+
+        .nav-logo-icon {
+            font-size: 1.6rem;
+            animation: heartBeatNav 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255,45,149,0.8));
+        }
+
+        @keyframes heartBeatNav {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(255,45,149,0.2);
+            color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255,45,149,0.3);
+        }
+
+        .nav-links .nav-icon { font-size: 1.1rem; }
+
+        /* ГАМБУРГЕР */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 6000;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--neon-pink);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255,45,149,0.5);
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* МОБИЛЬНОЕ МЕНЮ */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: rgba(15, 0, 30, 0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 5500;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 100px 30px 30px;
+            border-left: 2px solid rgba(255,45,149,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mobile-menu.active { right: 0; }
+
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 20px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .mobile-menu a:hover, .mobile-menu a:active {
+            background: rgba(255,45,149,0.15);
+            border-color: rgba(255,45,149,0.3);
+            transform: translateX(10px);
+        }
+
+        .mobile-menu .menu-icon { font-size: 1.5rem; }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 5400;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-overlay.active { opacity: 1; pointer-events: all; }
+
+        /* === ФОН === */
+        .aurora-bg {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0; overflow: hidden;
+            background: linear-gradient(180deg, #0a0015 0%, #1a0033 50%, #0a0015 100%);
+        }
+
+        .aurora {
+            position: absolute; width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,45,149,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(0,212,255,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 30%, rgba(184,41,221,0.2) 0%, transparent 50%);
+            animation: auroraMove 20s ease-in-out infinite;
+            filter: blur(60px);
+        }
+
+        @keyframes auroraMove {
+            0%, 100% { transform: translate(-25%, -25%) rotate(0deg); }
+            33% { transform: translate(-20%, -30%) rotate(5deg); }
+            66% { transform: translate(-30%, -20%) rotate(-5deg); }
+        }
+
+        .stars-container {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite var(--delay);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+        }
+
+        .floating-elements {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 2; pointer-events: none;
+            perspective: 1000px;
+        }
+
+        .floating-item {
+            position: absolute;
+            animation: floatItem var(--duration) ease-in-out infinite var(--delay);
+            opacity: 0.6;
+            filter: drop-shadow(0 0 10px rgba(255,45,149,0.5));
+        }
+
+        @keyframes floatItem {
+            0%, 100% { transform: translateY(0) rotateZ(0deg); }
+            50% { transform: translateY(-40px) rotateZ(15deg); }
+        }
+
+        .petal {
+            position: absolute;
+            width: 18px; height: 18px;
+            background: radial-gradient(ellipse at center, var(--hot-pink) 0%, transparent 70%);
+            border-radius: 50% 0 50% 50%;
+            animation: petalFall linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes petalFall {
+            0% { opacity: 0; transform: translateY(-5vh) translateX(0) rotateZ(0deg) scale(0.5); }
+            10% { opacity: 0.9; }
+            90% { opacity: 0.7; }
+            100% { opacity: 0; transform: translateY(105vh) translateX(100px) rotateZ(720deg) scale(1); }
+        }
+
+        .ripple {
+            position: fixed; border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,45,149,0.4) 0%, transparent 70%);
+            transform: scale(0);
+            animation: rippleAnim 0.8s ease-out forwards;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+
+        /* === КОНТЕНТ === */
+        .content { position: relative; z-index: 10; padding-top: var(--nav-height); }
+
+        /* === HERO === */
+        .hero {
+            min-height: calc(100vh - var(--nav-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            perspective: 1500px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,45,149,0.15);
+            border: 1px solid rgba(255,45,149,0.4);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            animation: fadeInScale 1s ease-out;
+            box-shadow: 0 0 30px rgba(255,45,149,0.2);
+        }
+
+        .neon-title {
+            font-size: clamp(2.2rem, 8vw, 4.5rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            animation: neonFlicker 2s infinite alternate, fadeInScale 1.5s ease-out;
+            text-shadow:
+                0 0 5px var(--neon-pink),
+                0 0 10px var(--neon-pink),
+                0 0 20px var(--neon-pink),
+                0 0 40px var(--electric-purple),
+                0 0 80px var(--electric-purple);
+        }
+
+        @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink),
+                    0 0 20px var(--neon-pink), 0 0 40px var(--electric-purple), 0 0 80px var(--electric-purple);
+            }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .typewriter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: var(--cyan);
+            margin-bottom: 40px;
+            min-height: 60px;
+            text-shadow: 0 0 20px rgba(0,212,255,0.5);
+        }
+
+        .typewriter .cursor { animation: blink 0.7s infinite; }
+
+        @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+        /* === 3D КАРТОЧКА === */
+        .card-3d {
+            background: linear-gradient(145deg, rgba(255,45,149,0.15) 0%, rgba(0,212,255,0.1) 50%, rgba(184,41,221,0.15) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,45,149,0.3);
+            border-radius: 30px;
+            padding: 45px 30px;
+            max-width: 600px;
+            width: 95vw;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 100px rgba(255,45,149,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .card-3d::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 0%, rgba(255,45,149,0.2) 10%, transparent 20%, rgba(0,212,255,0.2) 30%, transparent 40%);
+            animation: rotateGlow 6s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
+
+        .heart-container { margin-bottom: 25px; animation: heartPulse 1.5s ease-in-out infinite; }
+
+        @keyframes heartPulse {
+            0%,100%{transform:scale(1) translateY(0);}
+            15%{transform:scale(1.2) translateY(-10px);}
+            30%{transform:scale(1) translateY(0);}
+            45%{transform:scale(1.15) translateY(-5px);}
+            60%{transform:scale(1) translateY(0);}
+        }
+
+        .heart-emoji {
+            font-size: 4.5rem;
+            filter: drop-shadow(0 0 30px rgba(255,45,149,0.8));
+            animation: heartRotate 4s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartRotate { 0%,100%{transform:rotateY(0deg);} 50%{transform:rotateY(360deg);} }
+
+        .card-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            line-height: 2;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .card-signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            background: linear-gradient(90deg, var(--neon-pink), var(--cyan), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* === СЕКЦИИ === */
+        .section { padding: 70px 20px; max-width: 1100px; margin: 0 auto; scroll-margin-top: calc(var(--nav-height) + 20px); }
+
+        .section-header { text-align: center; margin-bottom: 50px; }
+
+        .section-icon {
+            font-size: 3rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255,45,149,0.6));
+        }
+
+        @keyframes bounce {
+            0%,100%{transform:translateY(0) scale(1);}
+            50%{transform:translateY(-12px) scale(1.1);}
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            background: linear-gradient(90deg, var(--neon-pink), var(--cyan), var(--gold), var(--electric-purple));
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s linear infinite;
+        }
+
+        @keyframes gradientFlow { 0%{background-position:0% center;} 100%{background-position:300% center;} }
+
+        .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            margin-top: 12px;
+            font-size: 1rem;
+        }
+
+        /* === КАРТОЧКИ ПОЖЕЛАНИЙ === */
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .wish-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .wish-card.visible { opacity: 1; transform: translateY(0); transition: all 0.6s ease; }
+        .wish-card.visible:nth-child(2) { transition-delay: 0.15s; }
+        .wish-card.visible:nth-child(3) { transition-delay: 0.3s; }
+
+        /* Тема Маши — розово-золотая */
+        .masha-section .wish-card { border-color: rgba(255,107,157,0.3); }
+        .masha-section .wish-card:hover, .masha-section .wish-card:active {
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--hot-pink);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(255,107,157,0.3);
+        }
+
+        /* Тема Вани — сине-фиолетовая */
+        .vanya-section .wish-card { border-color: rgba(0,212,255,0.3); }
+        .vanya-section .wish-card:hover, .vanya-section .wish-card:active {
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--cyan);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(0,212,255,0.3);
+        }
+
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .wish-card:hover::before, .wish-card:active::before { left: 100%; }
+
+        .wish-card-icon {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%,100%{transform:translateY(0) rotate(0deg);}
+            50%{transform:translateY(-10px) rotate(8deg);}
+        }
+
+        .wish-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .masha-section .wish-card-title { color: var(--hot-pink); text-shadow: 0 0 15px rgba(255,107,157,0.5); }
+        .vanya-section .wish-card-title { color: var(--cyan); text-shadow: 0 0 15px rgba(0,212,255,0.5); }
+
+        .wish-card-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .wish-card-sign {
+            margin-top: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        /* === РАЗДЕЛИТЕЛЬ === */
+        .section-divider {
+            height: 2px;
+            max-width: 300px;
+            margin: 20px auto 60px;
+            background: linear-gradient(90deg, transparent, var(--neon-pink), var(--cyan), transparent);
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(255,45,149,0.5);
+        }
+
+        /* === ТАЙМЛАЙН === */
+        .timeline { position: relative; padding: 20px 0; }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--neon-pink), var(--cyan), var(--gold));
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(255,45,149,0.5);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 30px);
+            margin-bottom: 45px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.visible { opacity: 1; transform: translateX(0); }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: calc(50% + 30px);
+            padding-right: 0;
+            transform: translateX(50px);
+        }
+
+        .timeline-item:nth-child(even).visible { transform: translateX(0); }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%; top: 20px;
+            transform: translateX(-50%);
+            width: 18px; height: 18px;
+            background: var(--neon-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,45,149,0.3);
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255,45,149,0.2); }
+
+        .timeline-emoji { font-size: 2.3rem; margin-bottom: 10px; }
+        .timeline-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: var(--gold); }
+        .timeline-text { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.8); }
+
+        /* === КНОПКИ === */
+        .btn-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 40px 0; }
+
+        .neon-btn {
+            padding: 16px 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            background: transparent;
+            border: 3px solid var(--neon-pink);
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(255,45,149,0.3), inset 0 0 20px rgba(255,45,149,0.1);
+        }
+
+        .neon-btn:hover, .neon-btn:active {
+            background: var(--neon-pink);
+            box-shadow: 0 0 50px rgba(255,45,149,0.8), inset 0 0 30px rgba(255,255,255,0.2);
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .neon-btn.cyan { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0,212,255,0.3), inset 0 0 20px rgba(0,212,255,0.1); }
+        .neon-btn.cyan:hover, .neon-btn.cyan:active { background: var(--cyan); box-shadow: 0 0 50px rgba(0,212,255,0.8); color: #0a0015; }
+        .neon-btn.gold { border-color: var(--gold); box-shadow: 0 0 20px rgba(255,215,0,0.3), inset 0 0 20px rgba(255,215,0,0.1); }
+        .neon-btn.gold:hover, .neon-btn.gold:active { background: var(--gold); box-shadow: 0 0 50px rgba(255,215,0,0.8); color: #0a0015; }
+
+        /* === ФЕЙЕРВЕРК / КОНФЕТТИ === */
+        .firework { position: fixed; pointer-events: none; z-index: 9999; }
+        .firework-particle {
+            position: absolute;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            animation: fireworkExplode 1.5s ease-out forwards;
+        }
+
+        @keyframes fireworkExplode {
+            0% { transform: translate(0,0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 12px; height: 12px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotateZ(0deg) rotateX(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotateZ(720deg) rotateX(360deg); opacity: 0; }
+        }
+
+        /* === МУЗЫКА === */
+        .music-btn {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, var(--neon-pink), var(--electric-purple));
+            border: none; cursor: pointer;
+            z-index: 4000;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 20px rgba(255,45,149,0.5);
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,100%{transform:scale(1); box-shadow:0 5px 20px rgba(255,45,149,0.5);}
+            50%{transform:scale(1.1); box-shadow:0 5px 40px rgba(255,45,149,0.8);}
+        }
+
+        .music-btn:active { transform: scale(0.9); }
+
+        /* === МОДАЛКА === */
+        .modal {
+            display: none;
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            align-items: center; justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active { display: flex; animation: fadeIn 0.3s ease; }
+
+        @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(255,45,149,0.2), rgba(0,212,255,0.1));
+            backdrop-filter: blur(30px);
+            border: 2px solid var(--neon-pink);
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 480px;
+            width: 95%;
+            text-align: center;
+            animation: modalPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 100px rgba(255,45,149,0.5);
+        }
+
+        @keyframes modalPop {
+            from{transform:scale(0) rotate(-10deg); opacity:0;}
+            to{transform:scale(1) rotate(0deg); opacity:1;}
+        }
+
+        .modal-emoji { font-size: 4.5rem; margin-bottom: 20px; animation: bounce 1s ease-in-out infinite; }
+        .modal-title {
+            font-size: 1.8rem; margin-bottom: 18px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .modal-text { font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9); margin-bottom: 25px; }
+
+        .modal-close {
+            padding: 14px 40px;
+            font-size: 1rem;
+            background: linear-gradient(90deg, var(--neon-pink), var(--electric-purple));
+            border: none; border-radius: 50px;
+            color: white; cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover, .modal-close:active { transform: scale(1.1); box-shadow: 0 0 30px rgba(255,45,149,0.8); }
+
+        /* === FOOTER === */
+        .footer { text-align: center; padding: 40px 20px 60px; color: rgba(255,255,255,0.5); }
+        .footer .heart { color: var(--neon-pink); animation: heartBeatNav 1s ease-in-out infinite; display: inline-block; }
+
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .wishes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .timeline::before { left: 15px; }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 45px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item::before { left: 15px; }
+
+            .section { padding: 50px 15px; }
+
+            .btn-container { flex-direction: column; }
+            .neon-btn { width: 100%; padding: 18px 20px; }
+
+            .card-3d { padding: 30px 20px; }
+            .heart-emoji { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 400px) {
+            .nav-logo { font-size: 0.95rem; }
+            .wish-card { padding: 25px 18px; }
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--neon-pink), var(--cyan)); border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="nav-logo-icon">💖</span>
+            <span>С Днём Матери!</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home"><span class="nav-icon">🏠</span> Главная</a></li>
+            <li><a href="#masha"><span class="nav-icon">💐</span> От Маши</a></li>
+            <li><a href="#vanya"><span class="nav-icon">🎁</span> От Вани</a></li>
+            <li><a href="#moments"><span class="nav-icon">📸</span> Моменты</a></li>
+            <li><a href="#final"><span class="nav-icon">💌</span> Послание</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" onclick="toggleMenu()"><span class="menu-icon">🏠</span> Главная</a>
+        <a href="#masha" onclick="toggleMenu()"><span class="menu-icon">💐</span> Пожелания от Маши</a>
+        <a href="#vanya" onclick="toggleMenu()"><span class="menu-icon">🎁</span> Пожелания от Вани</a>
+        <a href="#moments" onclick="toggleMenu()"><span class="menu-icon">📸</span> Наши моменты</a>
+        <a href="#final" onclick="toggleMenu()"><span class="menu-icon">💌</span> Финальное послание</a>
+    </div>
+
+    <!-- ФОН -->
+    <div class="aurora-bg"><div class="aurora"></div></div>
+    <div class="stars-container" id="stars"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- МУЗЫКА -->
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+    <!-- КОНТЕНТ -->
+    <div class="content">
+
+        <!-- ГЛАВНАЯ -->
+        <section class="hero" id="home">
+            <div class="hero-badge">
+                <span>🌸</span>
+                <span>Самый нежный праздник</span>
+                <span>🌸</span>
+            </div>
+            <h1 class="neon-title">С Днём Матери!</h1>
+            <div class="typewriter" id="typewriter"></div>
+
+            <div class="card-3d" id="card3d">
+                <div class="heart-container">
+                    <span class="heart-emoji">💖</span>
+                </div>
+                <p class="card-message">
+                    Мамочка, ты — наш ангел-хранитель, наша путеводная звезда
+                    и самый родной человек на свете. Твоя любовь согревает нас каждый день,
+                    твоя улыбка освещает путь, а твои объятия — самое безопасное место
+                    во вселенной. Мы любим тебя бесконечно! 💕
+                </p>
+                <p class="card-signature">С любовью, Маша и Ваня ❤️</p>
+            </div>
+
+            <div class="btn-container">
+                <button class="neon-btn" onclick="launchFireworks()">🎆 Фейерверк!</button>
+                <button class="neon-btn cyan" onclick="showSurprise()">🎁 Сюрприз</button>
+                <button class="neon-btn gold" onclick="dropConfetti()">🎊 Конфетти</button>
+            </div>
+        </section>
+
+        <!-- ПОЖЕЛАНИЯ ОТ МАШИ -->
+        <section class="section masha-section" id="masha">
+            <div class="section-header scroll-reveal">
+                <div class="section-icon">💐</div>
+                <h2 class="section-title">Пожелания от Маши</h2>
+                <p class="section-subtitle">Самые нежные слова для самой лучшей мамочки 💕</p>
+            </div>
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <span class="wish-card-icon">🌷</span>
+                    <h3 class="wish-card-title">Здоровья</h3>
+                    <p class="wish-card-text">
+                        Мамочка, желаю тебе крепкого здоровья на долгие-долгие годы!
+                        Пусть каждый день наполняет тебя энергией, а все болезни обходят стороной.
+                        Ты мне нужна здоровой и счастливой! 💪
+                    </p>
+                    <p class="wish-card-sign">— Твоя Маша 🌸</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-card-icon">👑</span>
+                    <h3 class="wish-card-title">Ты — королева!</h3>
+                    <p class="wish-card-text">
+                        Ты заслуживаешь корону за всё, что делаешь для нас!
+                        Самая красивая, самая добрая, самая заботливая мама на свете.
+                        Я горжусь, что ты — моя мама! ✨
+                    </p>
+                    <p class="wish-card-sign">— Твоя Маша 🌸</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-card-icon">🌈</span>
+                    <h3 class="wish-card-title">Радости</h3>
+                    <p class="wish-card-text">
+                        Пусть каждый твой день будет наполнен радостью и смехом!
+                        Ярких эмоций, приятных сюрпризов и исполнения всех мечт.
+                        Ты заслуживаешь всего самого лучшего! 🎉
+                    </p>
+                    <p class="wish-card-sign">— Твоя Маша 🌸</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ПОЖЕЛАНИЯ ОТ ВАНИ -->
+        <section class="section vanya-section" id="vanya">
+            <div class="section-header scroll-reveal">
+                <div class="section-icon">🎁</div>
+                <h2 class="section-title">Пожелания от Вани</h2>
+                <p class="section-subtitle">Самые искренние слова от любящего сына 💙</p>
+            </div>
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <span class="wish-card-icon">🙏</span>
+                    <h3 class="wish-card-title">Спасибо за всё</h3>
+                    <p class="wish-card-text">
+                        Мам, спасибо за бессонные ночи, за вкусные обеды,
+                        за поддержку и веру в меня. Ты всегда рядом,
+                        что бы ни случилось. Ты — мой герой! 💪
+                    </p>
+                    <p class="wish-card-sign">— Твой Ваня ⭐</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-card-icon">☀️</span>
+                    <h3 class="wish-card-title">Счастья</h3>
+                    <p class="wish-card-text">
+                        Желаю тебе бесконечного счастья! Пусть улыбка никогда
+                        не сходит с твоего лица, а в сердце всегда живёт радость.
+                        Я сделаю всё, чтобы ты была счастлива! 😊
+                    </p>
+                    <p class="wish-card-sign">— Твой Ваня ⭐</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-card-icon">❤️</span>
+                    <h3 class="wish-card-title">Люблю тебя</h3>
+                    <p class="wish-card-text">
+                        Мама, я люблю тебя больше, чем можно выразить словами!
+                        Ты — мой самый родной человек. Моя любовь к тебе
+                        бесконечна, как вселенная! 🚀
+                    </p>
+                    <p class="wish-card-sign">— Твой Ваня ⭐</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- МОМЕНТЫ -->
+        <section class="section" id="moments">
+            <div class="section-header scroll-reveal">
+                <div class="section-icon">📸</div>
+                <h2 class="section-title">Наши моменты вместе</h2>
+                <p class="section-subtitle">Дорогие сердцу воспоминания 💭</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">👶</div>
+                        <h3 class="timeline-title">Наше рождение</h3>
+                        <p class="timeline-text">Ты подарила нам жизнь и с первого дня окружила любовью и заботой</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">📚</div>
+                        <h3 class="timeline-title">Первый класс</h3>
+                        <p class="timeline-text">Ты держала нас за руку и помогала делать первые шаги в большой мир знаний</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">🤒</div>
+                        <h3 class="timeline-title">Бессонные ночи</h3>
+                        <p class="timeline-text">Когда мы болели, ты не спала ночами, заботясь о нас</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">🎓</div>
+                        <h3 class="timeline-title">Наши успехи</h3>
+                        <p class="timeline-text">Ты всегда радовалась нашим победам больше, чем мы сами</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">💪</div>
+                        <h3 class="timeline-title">Поддержка</h3>
+                        <p class="timeline-text">В трудные моменты ты всегда была рядом, верила в нас и поддерживала</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-emoji">❤️</div>
+                        <h3 class="timeline-title">Сегодня и всегда</h3>
+                        <p class="timeline-text">Мы бесконечно благодарны за всё, что ты делаешь. Любим тебя, мама!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФИНАЛ -->
+        <section class="section" id="final" style="text-align: center;">
+            <div class="section-header scroll-reveal">
+                <div class="section-icon">💌</div>
+                <h2 class="section-title">Финальное послание</h2>
+            </div>
+            <button class="neon-btn" style="font-size: 1.3rem; padding: 22px 50px;" onclick="showFinalMessage()">
+                💌 Нажми, чтобы открыть 💌
+            </button>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Сделано с <span class="heart">❤️</span> для самой лучшей мамы на свете</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Маша и Ваня • С Днём Матери! 🌸</p>
+        </footer>
+    </div>
+
+    <!-- МОДАЛКА -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-emoji" id="modalEmoji">🎉</div>
+            <h2 class="modal-title" id="modalTitle">Сюрприз!</h2>
+            <p class="modal-text" id="modalText">Мама, ты — лучшее, что есть в нашей жизни!</p>
+            <button class="modal-close" onclick="closeModal()">Закрыть 💖</button>
+        </div>
+    </div>
+
+    <script>
+        // === МЕНЮ ===
+        function toggleMenu() {
+            document.getElementById('hamburger').classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+        }
+
+        // === ЗВЁЗДЫ ===
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 120; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+            star.style.setProperty('--delay', Math.random() * 3 + 's');
+            starsContainer.appendChild(star);
+        }
+
+        // === ПЛАВАЮЩИЕ ЭЛЕМЕНТЫ ===
+        const floatingContainer = document.getElementById('floatingElements');
+        const emojis = ['💖','✨','🌸','💫','🌺','⭐','🌷','💕','🦋','🌟'];
+        for (let i = 0; i < 15; i++) {
+            const item = document.createElement('div');
+            item.className = 'floating-item';
+            item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            item.style.left = Math.random() * 100 + '%';
+            item.style.top = Math.random() * 100 + '%';
+            item.style.fontSize = (Math.random() * 1.5 + 1.2) + 'rem';
+            item.style.setProperty('--duration', (Math.random() * 8 + 8) + 's');
+            item.style.setProperty('--delay', Math.random() * 5 + 's');
+            floatingContainer.appendChild(item);
+        }
+
+        // === ЛЕПЕСТКИ ===
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            const colors = ['#ff2d95','#ff6b9d','#ffd700','#00d4ff','#b829dd'];
+            petal.style.background = `radial-gradient(ellipse at center, ${colors[Math.floor(Math.random()*colors.length)]} 0%, transparent 70%)`;
+            floatingContainer.appendChild(petal);
+            setTimeout(() => petal.remove(), 12000);
+        }
+        setInterval(createPetal, 400);
+        for (let i = 0; i < 8; i++) setTimeout(createPetal, i * 150);
+
+        // === TYPEWRITER ===
+        const phrases = [
+            'Любимой мамочке 💕',
+            'Самой лучшей на свете ⭐',
+            'Нашему ангелу-хранителю 👼',
+            'Спасибо за всё! 🙏',
+            'Мы тебя любим! ❤️',
+            'От Маши и Вани 💐'
+        ];
+        let phraseIndex = 0, charIndex = 0, isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (!isDeleting) {
+                typewriterEl.innerHTML = currentPhrase.substring(0, charIndex) + '<span class="cursor">|</span>';
+                charIndex++;
+                if (charIndex > currentPhrase.length) { isDeleting = true; setTimeout(type, 2000); return; }
+            } else {
+                typewriterEl.innerHTML = currentPhrase.substring(0, charIndex) + '<span class="cursor">|</span>';
+                charIndex--;
+                if (charIndex < 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; setTimeout(type, 500); return; }
+            }
+            setTimeout(type, isDeleting ? 40 : 90);
+        }
+        type();
+
+        // === RIPPLE ===
+        document.addEventListener('touchstart', e => createRipple(e.touches[0].clientX, e.touches[0].clientY));
+        document.addEventListener('click', e => createRipple(e.clientX, e.clientY));
+
+        function createRipple(x, y) {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = x - 50 + 'px';
+            ripple.style.top = y - 50 + 'px';
+            ripple.style.width = '100px';
+            ripple.style.height = '100px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 800);
+        }
+
+        // === 3D КАРТОЧКА ===
+        const card = document.getElementById('card3d');
+        document.addEventListener('mousemove', e => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 20;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 20;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        document.addEventListener('touchmove', e => {
+            const touch = e.touches[0];
+            const xAxis = (window.innerWidth / 2 - touch.pageX) / 30;
+            const yAxis = (window.innerHeight / 2 - touch.pageY) / 30;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // === ФЕЙЕРВЕРКИ ===
+        function launchFireworks() {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFirework(Math.random() * window.innerWidth, Math.random() * (window.innerHeight / 2));
+                }, i * 300);
+            }
+        }
+
+        function createFirework(x, y) {
+            const colors = ['#ff2d95','#00d4ff','#ffd700','#b829dd','#4ecdc4','#ff6b6b'];
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = color;
+                particle.style.boxShadow = `0 0 10px ${color}`;
+                const angle = (Math.PI * 2 * i) / 30;
+                const velocity = Math.random() * 150 + 100;
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.setProperty('--tx', Math.cos(angle) * velocity + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * velocity + 'px');
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1500);
+            }
+        }
+
+        // === КОНФЕТТИ ===
+        function dropConfetti() {
+            const colors = ['#ff2d95','#00d4ff','#ffd700','#b829dd','#4ecdc4','#ff6b6b'];
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-20px';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    if (Math.random() > 0.5) confetti.style.borderRadius = '50%';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+        }
+
+        // === МОДАЛКА ===
+        function showModal(emoji, title, text) {
+            document.getElementById('modalEmoji').textContent = emoji;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalText').textContent = text;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() { document.getElementById('modal').classList.remove('active'); }
+
+        function showSurprise() {
+            const surprises = [
+                { emoji: '🎂', title: 'Сюрприз!', text: 'Мама, ты заслуживаешь самый большой торт в мире! Пусть жизнь будет сладкой! 🍯' },
+                { emoji: '🌹', title: 'Для тебя!', text: 'Миллион роз для самой красивой мамы! Ты прекраснее всех цветов! 🌺' },
+                { emoji: '👑', title: 'Ты — королева!', text: 'Ты заслуживаешь корону за то, что ты самая лучшая мама во вселенной! 👸' },
+                { emoji: '🚀', title: 'До звёзд!', text: 'Наша любовь к тебе долетит до самых далёких звёзд и вернётся обратно! ⭐' }
+            ];
+            const s = surprises[Math.floor(Math.random() * surprises.length)];
+            showModal(s.emoji, s.title, s.text);
+            launchFireworks();
+        }
+
+        function showFinalMessage() {
+            showModal(
+                '💝',
+                'Мама, мы тебя любим!',
+                'Ты — наш самый родной человек. Спасибо за бессонные ночи, за тёплые объятия, за добрые слова и бесконечную поддержку. Ты сделала нас теми, кто мы есть. Мы любим тебя больше всех слов на свете! С Днём Матери! — Маша и Ваня 🎉💖'
+            );
+            launchFireworks();
+            dropConfetti();
+        }
+
+        // === МУЗЫКА ===
+        let musicPlaying = false;
+        function toggleMusic() {
+            musicPlaying = !musicPlaying;
+            document.getElementById('musicBtn').textContent = musicPlaying ? '🔊' : '🎵';
+            if (musicPlaying) showModal('🎵','Музыка','Добавьте свой аудиофайл в код для музыкального сопровождения!');
+        }
+
+        // === SCROLL REVEAL ===
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.scroll-reveal, .timeline-item, .wish-card').forEach(el => observer.observe(el));
+
+        // === АВТОФЕЙЕРВЕРК ===
+        setTimeout(launchFireworks, 1000);
+
+        // === ВИБРАЦИЯ ===
+        if (navigator.vibrate) {
+            document.querySelectorAll('button, .wish-card').forEach(el => {
+                el.addEventListener('touchstart', () => navigator.vibrate(30));
+            });
+        }
+
+        // === ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ ===
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>
